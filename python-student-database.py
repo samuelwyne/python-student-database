@@ -1,6 +1,7 @@
 while True:
-    num=int(input("Enter the student number: "))
     try:
+        num=int(input("Enter the student number: "))
+    
         if num>0:
             break
         else:
@@ -11,11 +12,12 @@ while True:
 students=[]
 for i in range(num):
     student={}
-    student["name"]=input("Enter student's name; ")
+    student["name"]=input("Enter student's name: ")
    
     while True:
-     student["age"]=int(input("Enter student's age: "))
      try:
+        student["age"]=int(input("Enter student's age: "))
+     
         if student["age"]>0:
             break
         else:
@@ -24,9 +26,10 @@ for i in range(num):
         print("Enter correct age of student:") 
     student["course"]=input("Enter students's course: ")    
     while True:
-     student["marks"]=int(input("Enter student's marks: "))
      try:
-        if 100>student["marks"]>0:
+        student["marks"]=int(input("Enter student's marks: "))
+     
+        if student["marks"]>0:
             break
         else:
             print("Enter correct marks of student: ")
@@ -34,7 +37,11 @@ for i in range(num):
         print("Enter correct marks of student:")
     student["grade"]=input("Enter student's grade: ")
     students.append(student)
-
+print()
+print(f"{"="*7}student records {"="*7}")
+print(f"name{" "*3}age{" "*3}marks{" "*3}grade")
+for student in students:
+    print(f"{student["name"]}{" "*5}{student["age"]}{" "*5}{student["marks"]}{" "*5}{student["grade"]}") 
 print(f"name{"="*5}age{"="*5}marks{"="*5}grade")
 for student in students:
     print(f"{student["name"]}{" "*5}{student["age"]}{" "*5}{student["marks"]}{" "*5}{student["grade"]}") 
